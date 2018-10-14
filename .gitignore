@@ -1,0 +1,17 @@
+*.lref
+*.cache
+*.pdb
+*.dll
+*.ide
+*.ide-shm
+*.ide-wal
+*.baml
+*.cache
+*.exe
+*.lref
+*.deleteme
+*.ps1
+*.nupkg
+*.suo
+*.dtbcache
+*.lock
