@@ -59,5 +59,14 @@ namespace MiniFacebook.LanguagesResources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Witaj na portalu MiniFacebook, proszę podaj swój login aby korzystać z portalu..
+        /// </summary>
+        internal static string LoginPageWelcome {
+            get {
+                return ResourceManager.GetString("LoginPageWelcome", resourceCulture);
+            }
+        }
     }
 }
