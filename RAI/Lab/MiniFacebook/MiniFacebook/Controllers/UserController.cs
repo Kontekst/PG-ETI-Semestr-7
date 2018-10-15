@@ -13,6 +13,7 @@ namespace MiniFacebook.Controllers
         public ActionResult Index()
         {
             //TODO
+            @ViewBag.UserLogin = Session["UserLogin"].ToString();
             return View();
         }
 

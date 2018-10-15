@@ -10,6 +10,7 @@ namespace MiniFacebook.Controllers
         [HttpGet]
         public ActionResult CheckAuthorization()
         {
+
             if (Session["UserLogin"] != null)
             {
                 if (Session["UserLogin"].ToString() == "admin")
@@ -42,8 +43,8 @@ namespace MiniFacebook.Controllers
             return View();
         }
 
-        [Route("Login")] //TODO
-        [Route("Login/{login}")] //TODO
+        [Route("Login")]
+        [Route("Login/{login}")]
         public ActionResult Login(string login)
         {
             if (Users.Contains(login))

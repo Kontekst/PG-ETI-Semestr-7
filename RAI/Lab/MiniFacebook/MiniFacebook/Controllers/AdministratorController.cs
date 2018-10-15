@@ -8,7 +8,7 @@ namespace MiniFacebook.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            //TODO
+            @ViewBag.UserLogin = Session["UserLogin"].ToString();
             return View();
         }
 
