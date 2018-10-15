@@ -5,6 +5,10 @@
     <h2>@MiniFacebook.LanguagesResources.FrontendText.LoggingError</h2>
 }
 
+@if (ViewBag.LogoutSuccess != null)
+{
+    <h2>@MiniFacebook.LanguagesResources.FrontendText.LogoutSuccess</h2>
+}
 
 @using (Html.BeginForm("Login", "Authorization"))
 {

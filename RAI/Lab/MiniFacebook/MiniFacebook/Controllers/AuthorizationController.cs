@@ -1,6 +1,4 @@
-﻿using MiniFacebook.LanguagesResources;
-using MiniFacebook;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace MiniFacebook.Controllers
@@ -44,8 +42,8 @@ namespace MiniFacebook.Controllers
             return View();
         }
 
-        [Route("Login")]
-        [Route("Login/{login}")]
+        [Route("Login")] //TODO
+        [Route("Login/{login}")] //TODO
         public ActionResult Login(string login)
         {
             if (Users.Contains(login))
@@ -68,8 +66,9 @@ namespace MiniFacebook.Controllers
         public ActionResult Logout()
         {
             Session.Clear();
-            //TODO
-            return View();
+            Session.Abandon();
+            ViewBag.LogoutSuccess = true;
+            return View("LoginPage");
         }
     }
 }

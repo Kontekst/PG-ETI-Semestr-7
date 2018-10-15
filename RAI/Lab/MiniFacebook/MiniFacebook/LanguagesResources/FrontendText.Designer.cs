@@ -77,5 +77,14 @@ namespace MiniFacebook.LanguagesResources {
                 return ResourceManager.GetString("LoginPageWelcome", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have logged out successfully..
+        /// </summary>
+        public static string LogoutSuccess {
+            get {
+                return ResourceManager.GetString("LogoutSuccess", resourceCulture);
+            }
+        }
     }
 }

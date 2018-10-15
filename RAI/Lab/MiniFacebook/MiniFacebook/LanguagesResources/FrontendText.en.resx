@@ -123,4 +123,7 @@
   <data name="LoginPageWelcome" xml:space="preserve">
     <value>Welcome on MiniFacebook site, please provide yout login to use our social website.</value>
   </data>
+  <data name="LogoutSuccess" xml:space="preserve">
+    <value>You have logged out successfully.</value>
+  </data>
 </root>
