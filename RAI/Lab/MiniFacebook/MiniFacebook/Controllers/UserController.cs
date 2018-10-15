@@ -16,7 +16,7 @@ namespace MiniFacebook.Controllers
             return View();
         }
 
-        [HttpGet, HttpPost] //TODO
+        [HttpGet, HttpPost] //TODO TEST
         [Route("Add")]
         public ActionResult AddFriend(string login)
         {
@@ -24,7 +24,7 @@ namespace MiniFacebook.Controllers
             return View();
         }
 
-        [HttpGet, HttpPost] //TODO
+        [HttpGet, HttpPost] //TODO TEST
         [Route("Del")]
         public ActionResult RemoveFriend(string login)
         {

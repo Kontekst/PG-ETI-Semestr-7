@@ -25,7 +25,7 @@ namespace MiniFacebook.Controllers
                 {"Dawid","Witold"},
                 {"Ewelina","Martyna"},
                 {"Martyna","Witold"},
-                {"Witold","Krystian"{}
+                {"Witold","Krystian"}
             };
             foreach (var friends in usersFriendsDictionary)
                 UserController.UsersFriendsDictionary.Add(friends.Key, friends.Value);
@@ -34,14 +34,14 @@ namespace MiniFacebook.Controllers
         }
 
         [HttpGet, HttpPost] //TODO
-        public ActionResult AddUser()
+        public ActionResult AddUser(string login)
         {
             //TODO
             return View();
         }
 
         [HttpGet, HttpPost] //TODO
-        public ActionResult DeleteUser()
+        public ActionResult DeleteUser(string login)
         {
             //TODO
             return View();

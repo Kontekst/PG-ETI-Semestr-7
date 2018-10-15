@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using MiniFacebook.LanguagesResources;
+using MiniFacebook;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace MiniFacebook.Controllers
@@ -8,7 +10,7 @@ namespace MiniFacebook.Controllers
         public static List<string> Users = new List<string>() { "admin" };
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult CheckAuthorization()
         {
             if (Session["UserLogin"] != null)
             {
@@ -25,25 +27,39 @@ namespace MiniFacebook.Controllers
         }
 
         [HttpGet]
+        [Route("LoginPage")]
         public ActionResult LoginPage()
         {
-            //TODO
+            if (Session["UserLogin"] != null)
+            {
+                if (Session["UserLogin"].ToString() == "admin")
+                {
+                    return RedirectToAction("Index", "Administrator");
+                }
+                else if (Session["UserLogin"].ToString() != "")
+                {
+                    return RedirectToAction("Index", "User");
+                }
+            }
             return View();
         }
 
-        [HttpGet, HttpPost] // TODO
+        [Route("Login")]
         [Route("Login/{login}")]
         public ActionResult Login(string login)
         {
             if (Users.Contains(login))
             {
                 Session["UserLogin"] = login;
+                if (login == "admin")
+                    return RedirectToAction("Index", "Administrator");
+
                 return RedirectToAction("Index", "User");
             }
             else
             {
-                //  TODO
-                return View();
+                ViewBag.LoginError = true;
+                return View("LoginPage");
             }
         }
 

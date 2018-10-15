@@ -1,7 +1,15 @@
-﻿@using (Html.BeginForm("Login", "Authorization"))
+﻿<h2>@MiniFacebook.LanguagesResources.FrontendText.LoginPageWelcome</h2>
+
+@if (ViewBag.LoginError != null)
+{
+    <h2>@MiniFacebook.LanguagesResources.FrontendText.LoggingError</h2>
+}
+
+
+@using (Html.BeginForm("Login", "Authorization"))
 {
     <p>
-        <input name="login" type="text" value="admin" />
+        <input name="login" type="text" value="" />
         <input type="submit" value="Submit login" />
     </p>
 } 

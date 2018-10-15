@@ -154,15 +154,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="LanguagesResources\English.Designer.cs">
+    <Compile Include="LanguagesResources\FrontendText.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>English.resx</DependentUpon>
+      <DependentUpon>FrontendText.resx</DependentUpon>
     </Compile>
-    <Compile Include="LanguagesResources\Polish.Designer.cs">
+    <Compile Include="LanguagesResources\FrontendText.en.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Polish.resx</DependentUpon>
+      <DependentUpon>FrontendText.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LanguagesResources\FrontendText.pl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FrontendText.pl.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -222,13 +227,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LanguagesResources\English.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>English.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="LanguagesResources\FrontendText.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FrontendText.en.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="LanguagesResources\Polish.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Polish.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="LanguagesResources\FrontendText.pl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FrontendText.pl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LanguagesResources\FrontendText.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FrontendText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
