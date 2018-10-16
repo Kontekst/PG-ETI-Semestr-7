@@ -150,6 +150,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\AuthorizationController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -212,8 +213,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Authorization\LoginPage.cshtml" />
     <Content Include="Views\Administrator\Index.cshtml" />
-    <Content Include="Views\User\UserPage.cshtml" />
     <Content Include="Views\Administrator\AddUser.cshtml" />
+    <Content Include="Views\User\List.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

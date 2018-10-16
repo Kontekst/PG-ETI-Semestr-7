@@ -6,14 +6,13 @@ using MiniFacebook.Models.User;
 
 namespace MiniFacebook.Controllers
 {
-    [RoutePrefix("Friends")]
     public class UserController : Controller
     {
         public static List<UserProfile> Users = new List<UserProfile>() { new UserProfile("admin", DateTime.Now, new List<string>()) };
 
         [HttpGet]
-        [Route("UserPage")]
-        public ActionResult UserPage()
+        [Route("List")]
+        public ActionResult List()
         {
             if ((Session["UserLogin"] == null) || (Session["UserLogin"] != null && Session["UserLogin"].ToString() == "admin"))
             {
@@ -23,11 +22,28 @@ namespace MiniFacebook.Controllers
             string userLogin = Session["UserLogin"].ToString();
             var userPageModel = new UserPageModel(userLogin, GetUserFriends(userLogin));
 
+            if (TempData["UserRemovedSuccessfully"] != null)
+            {
+                ViewBag.UserRemovedSuccessfully = true;
+            }
+            if (TempData["UserCanNotBeRemoved"] != null)
+            {
+                ViewBag.UserCanNotBeRemoved = true;
+            }
+            if (TempData["FriendAddedSuccessfully"] != null)
+            {
+                ViewBag.FriendAddedSuccessfully = true;
+            }
+            if (TempData["FriendAddingError"] != null)
+            {
+                ViewBag.FriendAddingError = true;
+            }
+
             return View(userPageModel);
         }
 
-        [HttpGet, HttpPost] //TODO TEST
-        [Route("Add")]
+        [Route("Friends/Add")]
+        [Route("Friends/Add/{login}")]
         public ActionResult AddFriend(string login)
         {
             if ((Session["UserLogin"] == null) || (Session["UserLogin"] != null && Session["UserLogin"].ToString() == "admin"))
@@ -35,12 +51,19 @@ namespace MiniFacebook.Controllers
                 return HttpNotFound();
             }
 
-            //TODO
-            return View();
+            if (IsFriendAddedSucessfully(Session["UserLogin"].ToString(), login))
+            {
+                TempData["FriendAddedSuccessfully"] = true;
+            }
+            else
+            {
+                TempData["FriendAddingError"] = true;
+            }
+            return RedirectToAction("List");
         }
 
-        [HttpGet, HttpPost] //TODO TEST
-        [Route("Del")]
+        [Route("Friends/Del")]
+        [Route("Friends/Del/{login}")]
         public ActionResult RemoveFriend(string login)
         {
             if ((Session["UserLogin"] == null) || (Session["UserLogin"] != null && Session["UserLogin"].ToString() == "admin"))
@@ -48,12 +71,18 @@ namespace MiniFacebook.Controllers
                 return HttpNotFound();
             }
 
-            //TODO
-            return View();
+            if (IsUserFriendRemovedSuccesfully(Session["UserLogin"].ToString(), login))
+            {
+                TempData["UserRemovedSuccessfully"] = true;
+            }
+            else
+            {
+                TempData["UserCanNotBeRemoved"] = true;
+            }
+            return RedirectToAction("List");
         }
 
-        [HttpGet]
-        [Route("Export")]
+        [Route("Friends/Export")]
         public ActionResult ExportFriendsListToFile()
         {
             if ((Session["UserLogin"] == null) || (Session["UserLogin"] != null && Session["UserLogin"].ToString() == "admin"))
@@ -65,8 +94,7 @@ namespace MiniFacebook.Controllers
             return View();
         }
 
-        [HttpGet]
-        [Route("Import")]
+        [Route("Friends/Import")]
         public ActionResult ImportFriendsListFromFile()
         {
             if ((Session["UserLogin"] == null) || (Session["UserLogin"] != null && Session["UserLogin"].ToString() == "admin"))
@@ -111,6 +139,42 @@ namespace MiniFacebook.Controllers
                 userFriendListProfiles.Add(userProfile);
             }
             return userFriendListProfiles;
+        }
+
+        public static bool IsUserFriendRemovedSuccesfully(string userLogin, string friendLogin)
+        {
+            if (Users.Where(user => user.Login == userLogin).Select(user => user.Login).FirstOrDefault() == friendLogin)
+            {
+                return false;
+            }
+            Users.Where(user => user.Login == userLogin).FirstOrDefault().UserFriends.Remove(friendLogin);
+            Users.Where(user => user.Login == friendLogin).FirstOrDefault().UserFriends.Remove(userLogin);
+            return true;
+        }
+
+        public static bool IsFriendAddedSucessfully(string userLogin, string friendLogin)
+        {
+            bool friendExist = false;
+            foreach (var userProfile in Users)
+            {
+                if (userProfile.Login == friendLogin)
+                {
+                    friendExist = true;
+                }
+            }
+
+            if (!friendExist)
+                return false;
+
+            if (!Users.Where(user => user.Login == userLogin).Select(user => user.UserFriends).FirstOrDefault().Contains(friendLogin))
+            {
+                Users.Where(user => user.Login == userLogin).FirstOrDefault().UserFriends.Add(friendLogin);
+            }
+            if (!Users.Where(user => user.Login == friendLogin).Select(user => user.UserFriends).FirstOrDefault().Contains(userLogin))
+            {
+                Users.Where(user => user.Login == friendLogin).FirstOrDefault().UserFriends.Add(userLogin);
+            }
+            return true;
         }
     }
 

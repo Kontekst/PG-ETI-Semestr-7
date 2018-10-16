@@ -1,0 +1,71 @@
+﻿@model MiniFacebook.Models.User.UserPageModel
+
+@if (@ViewBag.UserCanNotBeRemoved != null)
+{
+    <p>User cannot be removed</p>
+}
+@if (@ViewBag.UserRemovedSuccessfully != null)
+{
+    <p>User removed successfully</p>
+}
+
+@if (@ViewBag.FriendAddedSuccessfully != null)
+{
+    <p>Friend added successfully</p>
+}
+
+@if (@ViewBag.FriendAddingError != null)
+{
+    <p>Error during adding friend, friend does not exist</p>
+}
+
+<div class="row">
+    @using (Html.BeginForm("AddFriend", "User"))
+    {
+        <p>
+            <input name="login" type="text" value="" />
+            <input type="submit" value="Add new user" />
+        </p>
+    }
+</div>
+
+<div class="row">
+    @using (Html.BeginForm("ExportFriendsListToFile", "User"))
+    {
+        <p>
+            <input name="login" type="text" value="" />
+            <input type="submit" value="Export friends list" />
+        </p>
+    }
+</div>
+
+<div class="row">
+    @using (Html.BeginForm("ImportFriendsListFromFile", "User"))
+    {
+        <p>
+            <input type="submit" value="Import friends list" />
+        </p>
+    }
+</div>
+
+
+<p>@MiniFacebook.LanguagesResources.FrontendText.UsersFriendsListBelow</p>
+
+<div class="container">
+    @foreach (var user in Model.UserFriends)
+    {
+        <div class="row">
+            <div class="col-sm" style="display:inline-block;width:33%;">
+                <p style="color: blue;font-size: 20px;">@user.Login</p>
+            </div>
+
+            <div class="col-sm" style="display:inline-block;width:33%;">
+                <p style="color: blue;font-size: 20px;">@user.AccountCreationDate</p>
+            </div>
+
+            <div class="col-sm" style="display:inline-block;width:33%;">
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("RemoveFriend", "User", new { login = user.Login })'">@MiniFacebook.LanguagesResources.FrontendText.Remove @user.Login</button>
+            </div>
+        </div>
+    }
+</div>

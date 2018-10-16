@@ -27,7 +27,7 @@
 
 @if (Model.IsDatabaseInitialized == false)
 {
-    <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Init", "Administrator")'">@MiniFacebook.LanguagesResources.FrontendText.InitializeDatabase</button>
+    @Html.ActionLink(@MiniFacebook.LanguagesResources.FrontendText.InitializeDatabase, "Init", "Administrator", null, new { @class = "btn btn-primary btn-large" })
     <hr />
 }
 
@@ -58,7 +58,7 @@
             <div class="col-sm" style="display:inline-block;width:33%;">
                 @if (user.Login != "admin")
                 {
-                    <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteUser", "Administrator", new { login = user.Login })'">@MiniFacebook.LanguagesResources.FrontendText.Remove @user.Login</button>
+                    @Html.ActionLink((@MiniFacebook.LanguagesResources.FrontendText.Remove + " " + @user.Login), "DeleteUser", "Administrator", new { login = user.Login }, new { @class = "btn btn-danger btn-large" })
                 }
             </div>
         </div>

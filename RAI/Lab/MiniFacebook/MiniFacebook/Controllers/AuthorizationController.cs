@@ -50,7 +50,7 @@ namespace MiniFacebook.Controllers
                 if (login == "admin")
                     return RedirectToAction("Index", "Administrator");
 
-                return RedirectToAction("Index", "User");
+                return RedirectToAction("List", "User");
             }
             else
             {

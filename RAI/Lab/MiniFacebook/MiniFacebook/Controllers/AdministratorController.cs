@@ -100,10 +100,19 @@ namespace MiniFacebook.Controllers
             if (UserController.ContainsUser(login))
             {
                 ViewBag.UserAlreadyExist = true;
-                return View("AddUser");
+                var addUserModel = new AddUserModel(login);
+                return View("AddUser", addUserModel);
             }
-            UserController.Users.Add(new UserProfile(login, new List<string>()));
+            else
+            {
+                foreach (var user in UserController.Users)
+                {
+                    if (user.Login == login)
+                        return RedirectToAction("Index");
 
+                }
+                UserController.Users.Add(new UserProfile(login, new List<string>()));
+            }
             return RedirectToAction("Index");
         }
 
