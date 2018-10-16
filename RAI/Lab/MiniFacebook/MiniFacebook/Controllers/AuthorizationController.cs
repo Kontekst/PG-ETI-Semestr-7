@@ -1,12 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace MiniFacebook.Controllers
 {
     public class AuthorizationController : Controller
     {
-        public static List<string> Users = new List<string>() { "admin" };
-
         [HttpGet]
         public ActionResult CheckAuthorization()
         {
@@ -47,7 +44,7 @@ namespace MiniFacebook.Controllers
         [Route("Login/{login}")]
         public ActionResult Login(string login)
         {
-            if (Users.Contains(login))
+            if (UserController.ContainsUser(login))
             {
                 Session["UserLogin"] = login;
                 if (login == "admin")

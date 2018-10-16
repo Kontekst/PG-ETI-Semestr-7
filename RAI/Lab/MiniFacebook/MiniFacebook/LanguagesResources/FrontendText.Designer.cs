@@ -61,6 +61,60 @@ namespace MiniFacebook.LanguagesResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add user..
+        /// </summary>
+        public static string AddUser {
+            get {
+                return ResourceManager.GetString("AddUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Admin cannot be deleted..
+        /// </summary>
+        public static string AdminCannotBeDeleted {
+            get {
+                return ResourceManager.GetString("AdminCannotBeDeleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Initialization database preformed successfully.
+        /// </summary>
+        public static string DatabaseInitializationSuccess {
+            get {
+                return ResourceManager.GetString("DatabaseInitializationSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not delete user. User not found..
+        /// </summary>
+        public static string DeleteUserNotFound {
+            get {
+                return ResourceManager.GetString("DeleteUserNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Database has already been initialized..
+        /// </summary>
+        public static string InitializationAlreadyDone {
+            get {
+                return ResourceManager.GetString("InitializationAlreadyDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Initialize users database..
+        /// </summary>
+        public static string InitializeDatabase {
+            get {
+                return ResourceManager.GetString("InitializeDatabase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Oops, there is no user with given login..
         /// </summary>
         public static string LoggingError {
@@ -79,11 +133,83 @@ namespace MiniFacebook.LanguagesResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Logout.
+        /// </summary>
+        public static string Logout {
+            get {
+                return ResourceManager.GetString("Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have logged out successfully..
         /// </summary>
         public static string LogoutSuccess {
             get {
                 return ResourceManager.GetString("LogoutSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        public static string Remove {
+            get {
+                return ResourceManager.GetString("Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submit.
+        /// </summary>
+        public static string Submit {
+            get {
+                return ResourceManager.GetString("Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User already exists..
+        /// </summary>
+        public static string UserAlreadyExists {
+            get {
+                return ResourceManager.GetString("UserAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User removed successfully..
+        /// </summary>
+        public static string UserRemoved {
+            get {
+                return ResourceManager.GetString("UserRemoved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Below is list of your friends. You can add or remove existing if needed..
+        /// </summary>
+        public static string UsersFriendsListBelow {
+            get {
+                return ResourceManager.GetString("UsersFriendsListBelow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Below is list of all user. You can add or remove existing if needed..
+        /// </summary>
+        public static string UsersListBelow {
+            get {
+                return ResourceManager.GetString("UsersListBelow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome.
+        /// </summary>
+        public static string Welcome {
+            get {
+                return ResourceManager.GetString("Welcome", resourceCulture);
             }
         }
     }

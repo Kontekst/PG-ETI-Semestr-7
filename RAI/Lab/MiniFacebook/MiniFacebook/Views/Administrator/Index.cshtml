@@ -1,3 +1,66 @@
-﻿<p>Administrator</p>
+﻿@model MiniFacebook.Models.Administrator.IndexModel
 
-@ViewBag.UserLogin
+@if (@ViewBag.InitializationUsersSuccess != null)
+{
+    <p>@MiniFacebook.LanguagesResources.FrontendText.DatabaseInitializationSuccess</p>
+}
+
+@if (@ViewBag.DeleteUserSuccess != null)
+{
+    <p>@MiniFacebook.LanguagesResources.FrontendText.UserRemoved</p>
+}
+
+@if (@ViewBag.DeleteUserNotFound != null)
+{
+    <p>@MiniFacebook.LanguagesResources.FrontendText.DeleteUserNotFound</p>
+}
+
+@if (@ViewBag.InitializationAlreadyDone != null)
+{
+    <p>@MiniFacebook.LanguagesResources.FrontendText.InitializationAlreadyDone</p>
+}
+
+@if (@ViewBag.AdminCannotBeDeleted != null)
+{
+    <p>@MiniFacebook.LanguagesResources.FrontendText.AdminCannotBeDeleted</p>
+}
+
+@if (Model.IsDatabaseInitialized == false)
+{
+    <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Init", "Administrator")'">@MiniFacebook.LanguagesResources.FrontendText.InitializeDatabase</button>
+    <hr />
+}
+
+<div class="row">
+    @using (Html.BeginForm("AddNewUser", "Administrator"))
+    {
+        <p>
+            <input name="login" type="text" value="" />
+            <input type="submit" value="@MiniFacebook.LanguagesResources.FrontendText.AddUser" />
+        </p>
+    }
+</div>
+
+<p>@MiniFacebook.LanguagesResources.FrontendText.UsersListBelow</p>
+
+<div class="container">
+    @foreach (var user in Model.Users)
+    {
+        <div class="row">
+            <div class="col-sm" style="display:inline-block;width:33%;">
+                <p style="color: blue;font-size: 20px;">@user.Login</p>
+            </div>
+
+            <div class="col-sm" style="display:inline-block;width:33%;">
+                <p style="color: blue;font-size: 20px;">@user.AccountCreationDate</p>
+            </div>
+
+            <div class="col-sm" style="display:inline-block;width:33%;">
+                @if (user.Login != "admin")
+                {
+                    <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteUser", "Administrator", new { login = user.Login })'">@MiniFacebook.LanguagesResources.FrontendText.Remove @user.Login</button>
+                }
+            </div>
+        </div>
+    }
+</div>

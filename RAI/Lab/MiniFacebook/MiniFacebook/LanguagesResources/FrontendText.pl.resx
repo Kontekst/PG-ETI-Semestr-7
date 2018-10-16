@@ -117,13 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddUser" xml:space="preserve">
+    <value>Dodaj użytkownika.</value>
+  </data>
+  <data name="AdminCannotBeDeleted" xml:space="preserve">
+    <value>Nie można usunąć admina.</value>
+  </data>
+  <data name="DatabaseInitializationSuccess" xml:space="preserve">
+    <value>Inicjalizacja bazy przeprowadzona pomyślnie.</value>
+  </data>
+  <data name="DeleteUserNotFound" xml:space="preserve">
+    <value>Nie znalezioniono użytkownika o podanym loginie.</value>
+  </data>
+  <data name="InitializationAlreadyDone" xml:space="preserve">
+    <value>Baza danych została już wcześniej wypełniona.</value>
+  </data>
+  <data name="InitializeDatabase" xml:space="preserve">
+    <value>Wypełnij bazę użytkowników.</value>
+  </data>
   <data name="LoggingError" xml:space="preserve">
     <value>Oops, nie ma takiego użytkownika.</value>
   </data>
   <data name="LoginPageWelcome" xml:space="preserve">
     <value>Witaj na portalu MiniFacebook, proszę podaj swój login aby korzystać z portalu.</value>
   </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Wyloguj</value>
+  </data>
   <data name="LogoutSuccess" xml:space="preserve">
     <value>Pomyślnie wylogowanie.</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Wyślij</value>
+  </data>
+  <data name="UserAlreadyExists" xml:space="preserve">
+    <value>Użytkownik o podanym loginie już istnieje.</value>
+  </data>
+  <data name="UserRemoved" xml:space="preserve">
+    <value>Użytkownik pomyślnie usunięty.</value>
+  </data>
+  <data name="UsersFriendsListBelow" xml:space="preserve">
+    <value>Poniżej znajduje się lista twoich przyjaciół, możesz dodawać ich lub usuwać w razie potrzeby.</value>
+  </data>
+  <data name="UsersListBelow" xml:space="preserve">
+    <value>Poniżej znajduje się lista aktywnych użytkowników, możesz dodawać ich lub usuwać w razie potrzeby.</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Witaj</value>
   </data>
 </root>

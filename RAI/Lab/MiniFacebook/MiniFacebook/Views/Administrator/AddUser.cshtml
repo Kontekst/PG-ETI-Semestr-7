@@ -1,0 +1,16 @@
+﻿@model MiniFacebook.Models.Administrator.AddUserModel
+
+@if (@ViewBag.UserAlreadyExist != null)
+{
+    <p>@MiniFacebook.LanguagesResources.FrontendText.UserAlreadyExists</p>
+}
+
+<div class="row">
+    @using (Html.BeginForm("AddNewUser", "Administrator"))
+    {
+        <p>
+            <input name="login" type="text" value="@Model.UserLogin " />
+            <input type="submit" value="@MiniFacebook.LanguagesResources.FrontendText.AddUser" />
+        </p>
+    }
+</div>

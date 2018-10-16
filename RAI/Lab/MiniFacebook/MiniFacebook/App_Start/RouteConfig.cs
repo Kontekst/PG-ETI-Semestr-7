@@ -21,12 +21,6 @@ namespace MiniFacebook
                 url: "",
                 defaults: new { controller = "Authorization", action = "CheckAuthorization" }
             );
-
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}",
-                defaults: new { controller = "{controller{", action = "{action}", id = UrlParameter.Optional }
-            );
         }
     }
 }

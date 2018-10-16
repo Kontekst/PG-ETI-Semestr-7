@@ -117,13 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddUser" xml:space="preserve">
+    <value>Add user.</value>
+  </data>
+  <data name="AdminCannotBeDeleted" xml:space="preserve">
+    <value>Admin cannot be deleted.</value>
+  </data>
+  <data name="DatabaseInitializationSuccess" xml:space="preserve">
+    <value>Initialization database preformed successfully</value>
+  </data>
+  <data name="DeleteUserNotFound" xml:space="preserve">
+    <value>Could not delete user. User not found.</value>
+  </data>
+  <data name="InitializationAlreadyDone" xml:space="preserve">
+    <value>Database has already been initialized.</value>
+  </data>
+  <data name="InitializeDatabase" xml:space="preserve">
+    <value>Initialize users database.</value>
+  </data>
   <data name="LoggingError" xml:space="preserve">
     <value>Oops, there is no user with given login.</value>
   </data>
   <data name="LoginPageWelcome" xml:space="preserve">
     <value>Welcome on MiniFacebook site, please provide yout login to use our social website.</value>
   </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
   <data name="LogoutSuccess" xml:space="preserve">
     <value>You have logged out successfully.</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="UserAlreadyExists" xml:space="preserve">
+    <value>User already exists.</value>
+  </data>
+  <data name="UserRemoved" xml:space="preserve">
+    <value>User removed successfully.</value>
+  </data>
+  <data name="UsersFriendsListBelow" xml:space="preserve">
+    <value>Below is list of your friends. You can add or remove existing if needed.</value>
+  </data>
+  <data name="UsersListBelow" xml:space="preserve">
+    <value>Below is list of all user. You can add or remove existing if needed.</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
   </data>
 </root>

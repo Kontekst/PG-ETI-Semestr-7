@@ -169,6 +169,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FrontendText.pl.resx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Administrator\AddUserModel.cs" />
+    <Compile Include="Models\Administrator\IndexModel.cs" />
+    <Compile Include="Models\User\UserPageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -209,11 +212,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Authorization\LoginPage.cshtml" />
     <Content Include="Views\Administrator\Index.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\UserPage.cshtml" />
+    <Content Include="Views\Administrator\AddUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
